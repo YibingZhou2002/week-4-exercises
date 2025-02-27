@@ -10,6 +10,18 @@ Fraction Fraction::Multiply(Fraction other)
     return Fraction(numerator * other.numerator, denominator * other.denominator);
 }
 
+Fraction Fraction::operator*(const Fraction& other) const
+{
+    return Fraction(numerator * other.numerator, denominator * other.denominator);
+}
+
+Fraction Fraction::operator+(const Fraction& other) const
+{
+    int new_num = numerator * other.denominator + other.numerator * denominator;
+    int new_den = denominator * other.denominator;
+    return Fraction(new_num, new_den);
+}
+
 int gcd(int a, int b)
 {
     int x;

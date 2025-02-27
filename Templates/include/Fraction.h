@@ -13,6 +13,12 @@ class Fraction
 
     std::string toString() const;
 
+    // Overload operator* to multiply two fractions
+    Fraction operator*(const Fraction& other) const;
+
+    // Overload operator+ to add two fractions
+    Fraction operator+(const Fraction& other) const;
+
     private:
 
     int numerator;
